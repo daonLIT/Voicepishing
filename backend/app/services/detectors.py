@@ -1,6 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
-from app.core.config import settings
+from backend.app.core.config import settings
 
 JUDGE_PROMPT = ChatPromptTemplate.from_template("""
 당신은 보이스피싱 판정가입니다.

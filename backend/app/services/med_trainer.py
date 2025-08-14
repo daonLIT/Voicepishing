@@ -1,5 +1,5 @@
-from app.core.config import settings
-from app.services.llm_providers import judge_llm
+from backend.app.core.config import settings
+from backend.app.services.llm_providers import judge_llm
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 

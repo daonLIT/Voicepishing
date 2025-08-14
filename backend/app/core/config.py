@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     MAX_TURNS: int = 6
     CONCURRENCY: int = 10
     USE_STUB_LLM: bool = True
+    PHISH_PROB: float = 0.30 #실험
     class Config: env_file = ".env"
 
 settings = Settings()

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import agents, simulate, education, metrics
+from backend.app.routers import agents, simulate, education, metrics
 
 app = FastAPI(title="Voice Phishing Simulation")
 app.include_router(agents.router, prefix="/agents", tags=["agents"])

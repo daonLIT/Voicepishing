@@ -1,6 +1,6 @@
 from fastapi import APIRouter
-from app.db.base import SessionLocal
-from app.db.models import AgentProfile, AttackMethod
+from backend.app.db.base import SessionLocal
+from backend.app.db.models import AgentProfile, AttackMethod
 
 router = APIRouter()
 

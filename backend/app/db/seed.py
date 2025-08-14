@@ -19,11 +19,18 @@ def seed():
     # 공격자 1, 경찰 1, 피해자 5(연령대)
     db.merge(AgentProfile(id=1, role="attacker", name="사기범A", provider="gpt"))
     db.merge(AgentProfile(id=2, role="police", name="경찰", provider="system"))
+    age_traits = {
+        "20s":  {"finance_lit": 0.25, "defense": 0.30, "avoidance": 0.35},
+        "30s":  {"finance_lit": 0.35, "defense": 0.40, "avoidance": 0.45},
+        "40s":  {"finance_lit": 0.50, "defense": 0.50, "avoidance": 0.50},
+        "50s":  {"finance_lit": 0.45, "defense": 0.55, "avoidance": 0.55},
+        "60s+": {"finance_lit": 0.30, "defense": 0.35, "avoidance": 0.40},
+    }
     age_groups = ["20s","30s","40s","50s","60s+"]
     for i,ag in enumerate(age_groups, start=10):
         db.merge(AgentProfile(
             id=i, role="victim", name=f"시민{ag}", provider="gemini",
-            age_group=ag, traits={"finance_lit":0.3,"defense":0.4,"avoidance":0.5}
+            age_group=ag, traits=age_traits[ag]
         ))
     db.commit(); db.close()
 
